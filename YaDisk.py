@@ -14,10 +14,13 @@ class YaUploader:
 		response = requests.get(upload_url, headers=headers, params=params)
 		pprint(response.json())
 		disk_link = response.json()['href']
-		requests.put(disk_link, open(file_name, 'rb'))
+		return requests.put(disk_link, open(file_name, 'rb'))
 
 
-TOKEN = 'y0_AgAAAAAAlde3AADLWwAAAADTHHzbYD0Iis_mQIyLneHfVdTHZJwtbnw'
-ya = YaUploader(TOKEN)
-path = r'D:\PyProject\Netology\Requests\test2.txt'
-ya.upload(path)
+if __name__ == '__main__':
+	# Получить путь к загружаемому файлу и токен от пользователя
+	path_to_file = r'D:\PyProject\Netology\Requests\test2.txt'
+	token = 'y0_AgAAAAAAlde3AADLWwAAAADTHHzbYD0Iis_mQIyLneHfVdTHZJwtbnw'
+	uploader = YaUploader(token)
+	result = uploader.upload(path_to_file)
+	print(result)

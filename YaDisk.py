@@ -19,8 +19,8 @@ class YaUploader:
 
 if __name__ == '__main__':
 	# Получить путь к загружаемому файлу и токен от пользователя
-	path_to_file = r'D:\PyProject\Netology\Requests\test2.txt'
-	token = 'y0_AgAAAAAAlde3AADLWwAAAADTHHzbYD0Iis_mQIyLneHfVdTHZJwtbnw'
+	path_to_file = r''
+	token = ''
 	uploader = YaUploader(token)
 	result = uploader.upload(path_to_file)
 	print(result)
